@@ -7,6 +7,13 @@ import Colors from './Colors'
 
 const ApplicationStyles = {
   screen: {
+    loginTitleText: {
+      textAlign: 'center',
+      ...Fonts.style.h2,
+      fontSize: 40,
+      color: Colors.text,
+      paddingTop: 0.25 * Metrics.screenHeight,
+    },
     mainContainer: {
       flex: 1,
       backgroundColor: Colors.transparent
@@ -16,7 +23,9 @@ const ApplicationStyles = {
       top: 0,
       left: 0,
       bottom: 0,
-      right: 0
+      right: 0,
+      height: Metrics.screenHeight,
+      width: Metrics.screenWidth,
     },
     container: {
       flex: 1,
