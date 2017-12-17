@@ -9,7 +9,7 @@ export default StyleSheet.create({
     marginVertical: Metrics.baseMargin,
     backgroundColor: Colors.fire,
     alignSelf: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   buttonText: {
     color: Colors.snow,

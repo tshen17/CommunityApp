@@ -10,9 +10,10 @@ const ApplicationStyles = {
     loginTitleText: {
       textAlign: 'center',
       ...Fonts.style.h2,
-      fontSize: 40,
+      fontSize: 50,
       color: Colors.text,
       paddingTop: 0.2 * Metrics.screenHeight,
+      paddingBottom: 30,
     },
     mainContainer: {
       flex: 1,
@@ -29,7 +30,7 @@ const ApplicationStyles = {
       backgroundColor: Colors.transparent
     },
     section: {
-      margin: Metrics.section,
+      marginHorizontal: Metrics.section,
       padding: Metrics.baseMargin
     },
     sectionText: {
@@ -49,7 +50,13 @@ const ApplicationStyles = {
       ...Fonts.style.h2,
       fontSize: 14,
       color: Colors.text
-    }
+    },
+    backButton: {
+      position: 'absolute',
+      paddingTop: 30,
+      paddingHorizontal: 10,
+      zIndex: 2,
+    },
   },
   darkLabelContainer: {
     padding: Metrics.smallMargin,
@@ -79,7 +86,7 @@ const ApplicationStyles = {
     borderColor: Colors.ember,
     alignItems: 'center',
     textAlign: 'center'
-  }
+  },
 }
 
 export default ApplicationStyles

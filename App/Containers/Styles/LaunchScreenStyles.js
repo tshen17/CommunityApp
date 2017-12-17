@@ -15,4 +15,14 @@ export default StyleSheet.create({
   centered: {
     alignItems: 'center'
   },
+  buttons: {
+    flexDirection: 'row',
+    paddingBottom: 40,
+    justifyContent: 'space-between',
+    paddingHorizontal: 40,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 15,
+  },
 })
