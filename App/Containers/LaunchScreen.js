@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { ScrollView, Text, Image, View } from 'react-native'
 import DevscreensButton from '../../ignite/DevScreens/DevscreensButton.js'
 
+import InputField from '../Components/InputField.js'
 import { Images } from '../Themes'
 
 // Styles
@@ -17,6 +18,8 @@ export default class LaunchScreen extends Component {
             <Text style={styles.loginTitleText}>
               THE PLUG
             </Text>
+            <InputField placeholder="E-mail" />
+            <InputField placeholder="Password" />
           </View>
 
           <DevscreensButton />

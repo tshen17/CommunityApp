@@ -12,7 +12,7 @@ const ApplicationStyles = {
       ...Fonts.style.h2,
       fontSize: 40,
       color: Colors.text,
-      paddingTop: 0.25 * Metrics.screenHeight,
+      paddingTop: 0.2 * Metrics.screenHeight,
     },
     mainContainer: {
       flex: 1,
@@ -20,10 +20,6 @@ const ApplicationStyles = {
     },
     backgroundImage: {
       position: 'absolute',
-      top: 0,
-      left: 0,
-      bottom: 0,
-      right: 0,
       height: Metrics.screenHeight,
       width: Metrics.screenWidth,
     },
