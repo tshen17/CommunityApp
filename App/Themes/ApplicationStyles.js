@@ -15,6 +15,13 @@ const ApplicationStyles = {
       paddingTop: 0.2 * Metrics.screenHeight,
       paddingBottom: 30,
     },
+    feedTitleText: {
+      textAlign: 'center',
+      ...Fonts.style.h2,
+      fontSize: 40,
+      color: Colors.text,
+      paddingTop: 25,
+    },
     mainContainer: {
       flex: 1,
       backgroundColor: Colors.transparent

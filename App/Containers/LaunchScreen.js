@@ -19,7 +19,7 @@ export default class LaunchScreen extends Component {
             <Text style={styles.loginTitleText}>
               FEED
             </Text>
-            <InputField placeholder="E-mail" />
+            <InputField placeholder="E-mail or Username" />
             <InputField placeholder="Password" />
           </View>
           <View style={styles.buttons}>
@@ -34,7 +34,8 @@ export default class LaunchScreen extends Component {
           </View>
 
 
-          <DevscreensButton />
+          <RoundedButton onPress={() => this.props.navigation.navigate('FeedScreen')}
+                         text="Login"/>
         </ScrollView>
       </View>
     )
