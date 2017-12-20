@@ -21,9 +21,9 @@ export default class RegisterScreen extends Component {
             <Text style={styles.loginTitleText}>
               Register
             </Text>
-            <InputField placeholder="E-mail" />
-            <InputField placeholder="Password" />
-            <InputField placeholder="Confirm Password" />
+            <InputField keyboardType="email-address" placeholder="E-mail or Username" />
+            <InputField secureTextEntry= {true} placeholder="Password" />
+            <InputField secureTextEntry= {true} placeholder="Confirm Password" />
           </View>
 
           <RoundedButton text="Register"/>

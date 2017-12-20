@@ -19,8 +19,8 @@ export default class LaunchScreen extends Component {
             <Text style={styles.loginTitleText}>
               FEED
             </Text>
-            <InputField placeholder="E-mail or Username" />
-            <InputField placeholder="Password" />
+            <InputField keyboardType="email-address" placeholder="E-mail or Username" />
+            <InputField secureTextEntry= {true} placeholder="Password" />
           </View>
           <View style={styles.buttons}>
             <TouchableOpacity

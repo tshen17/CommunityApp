@@ -18,9 +18,11 @@ export default class InputField extends Component {
   render() {
     return (
       <TextInput
-        //autocapitalize="none"
+        autoCapitalize="none"
         placeholder={this.props.placeholder}
         onChangeText={this.onChangeText}
+        secureTextEntry={this.props.secureTextEntry}
+        keyboardType={this.props.keyboardType}
         value={this.state.text}
         style={styles.input}
       />

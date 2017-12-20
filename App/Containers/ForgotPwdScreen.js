@@ -21,7 +21,7 @@ export default class ForgotPwdScreen extends Component {
             <Text style={styles.loginTitleText}>
               Reset Password
             </Text>
-            <InputField placeholder="E-mail" />
+            <InputField keyboardType="email-address" placeholder="E-mail or Username" />
           </View>
 
           <RoundedButton text="Send Confirmation"/>
