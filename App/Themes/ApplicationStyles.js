@@ -19,12 +19,16 @@ const ApplicationStyles = {
       textAlign: 'center',
       ...Fonts.style.h2,
       fontSize: 40,
-      color: Colors.text,
+      color: 'black',
       paddingTop: 25,
     },
     mainContainer: {
       flex: 1,
-      backgroundColor: Colors.transparent
+      backgroundColor: Colors.transparent,
+    },
+    feedContainer: {
+      flex: 1,
+      backgroundColor: '#f5f5f5',
     },
     backgroundImage: {
       position: 'absolute',
@@ -34,7 +38,7 @@ const ApplicationStyles = {
     container: {
       flex: 1,
       paddingTop: Metrics.baseMargin,
-      backgroundColor: Colors.transparent
+      backgroundColor: Colors.transparent,
     },
     section: {
       marginHorizontal: Metrics.section,

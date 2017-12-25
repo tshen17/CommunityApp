@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 // Styles
 import styles from './Styles/LaunchScreenStyles'
 
-export default class LaunchScreen extends Component {
+export default class ProfileScreen extends Component {
   render () {
     return (
       <View style={styles.feedContainer}>
@@ -20,7 +20,7 @@ export default class LaunchScreen extends Component {
           borderBottomWidth: 0.5,
         }}>
           <Text style={styles.feedTitleText}>
-            FEED
+            PROFILE
           </Text>
         </View>
         <ScrollView style={styles.container}>
@@ -54,17 +54,18 @@ export default class LaunchScreen extends Component {
           }} />
         </ScrollView>
         <View style={{
+
           height: 50,
           alignItems: 'center',
           backgroundColor: '#4d4d4d',
           flexDirection: 'row',
           justifyContent: 'space-around',
         }}>
-          <Icon name="home" size={35} color='white' onPress={() => this.props.navigation.navigate('FeedScreen')}/>
-          <Icon name="search" size={35} color='white' onPress={() => this.props.navigation.navigate('ExploreScreen')}/>
-          <Icon name="plus" size={35} color='white' onPress={() => this.props.navigation.navigate('AddScreen')}/>
-          <Icon name="comment" size={35} color='white' onPress={() => this.props.navigation.navigate('NotificationsScreen')}/>
-          <Icon name="user" size={35} color='white' onPress={() => this.props.navigation.navigate('ProfileScreen')}/>
+        <Icon name="home" size={35} color='white' onPress={() => this.props.navigation.navigate('FeedScreen')}/>
+        <Icon name="search" size={35} color='white' onPress={() => this.props.navigation.navigate('ExploreScreen')}/>
+        <Icon name="plus" size={35} color='white' onPress={() => this.props.navigation.navigate('AddScreen')}/>
+        <Icon name="comment" size={35} color='white' onPress={() => this.props.navigation.navigate('NotificationsScreen')}/>
+        <Icon name="user" size={35} color='white' onPress={() => this.props.navigation.navigate('ProfileScreen')}/>
         </View>
       </View>
     )
