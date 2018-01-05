@@ -18,9 +18,9 @@ const ApplicationStyles = {
     feedTitleText: {
       textAlign: 'center',
       ...Fonts.style.h2,
-      fontSize: 40,
+      fontSize: 30,
       color: 'black',
-      paddingTop: 25,
+      paddingTop: 10,
     },
     mainContainer: {
       flex: 1,
@@ -28,7 +28,7 @@ const ApplicationStyles = {
     },
     feedContainer: {
       flex: 1,
-      backgroundColor: '#f5f5f5',
+      backgroundColor: '#f9f9f9',
     },
     backgroundImage: {
       position: 'absolute',

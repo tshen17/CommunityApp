@@ -21,7 +21,7 @@ export default class DevscreensButton extends React.Component {
       return (
         <View>
           <RoundedButton onPress={this.toggleModal}>
-            LOGIN
+            login
           </RoundedButton>
           <Modal
             visible={this.state.showModal}

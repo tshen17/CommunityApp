@@ -1,57 +1,96 @@
 import React, { Component } from 'react'
-import { ScrollView, Text, Image, View, TouchableOpacity } from 'react-native'
+import { ScrollView, Text, Image, View, TouchableOpacity, TextInput } from 'react-native'
 import RoundedButton from '../Components/RoundedButton.js'
+import HeaderBar from '../Components/HeaderBar'
+import * as eventActions from '../Redux/event/eventActions.js'
 
-import InputField from '../Components/InputField.js'
 import { Images } from '../Themes'
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 // Styles
 import styles from './Styles/LaunchScreenStyles'
 
-export default class AddScreen extends Component {
+function mapStateToProps(state) {
+  return {
+    username: state.auth.form.fields.username,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({...eventActions}, dispatch),
+  }
+}
+
+class AddScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      id: '',
+      location: '',
+      caption: '',
+    }
+  }
+
+  onAddEvent() {
+    const comments = this.state.caption === '' ? [] :
+    [{
+      author: this.props.username,
+      text: this.state.caption
+    }];
+
+    const event = {
+      info: {
+        id: this.state.id,
+        author: this.props.username,
+        location: this.state.location,
+
+        // defaults
+        likesCount: 0,
+        liked: false,
+        likesList: [],
+      },
+      comments,
+    };
+
+    this.props.actions.addEventSuccess(event);
+    this.props.navigation.navigate('FeedScreen');
+  }
+
   render () {
+    const disabled = this.state.id === '';
+
     return (
-      <View style={styles.feedContainer}>
-        <View style={{
-          backgroundColor: '#f5f5f5',
-          borderColor: 'black',
-          paddingBottom: 5,
-          borderBottomWidth: 0.5,
-        }}>
-          <Text style={styles.feedTitleText}>
-            ADD
-          </Text>
-        </View>
+      <View style={{flex: 1, backgroundColor: 'gray'}}>
+        <HeaderBar title='Add an Event!' navigation={this.props.navigation} />
         <ScrollView style={styles.container}>
-          <View style={{
-            backgroundColor: 'white',
-            height: 200,
-            borderColor: 'black',
-            paddingBottom: 5,
-            borderWidth: 0.5,
-          }} />
-          <View style={{
-            backgroundColor: 'white',
-            height: 200,
-            borderColor: 'black',
-            paddingBottom: 5,
-            borderWidth: 0.5,
-          }}/>
-          <View style={{
-            backgroundColor: 'white',
-            height: 200,
-            borderColor: 'black',
-            paddingBottom: 5,
-            borderWidth: 0.5,
-          }} />
-          <View style={{
-            backgroundColor: 'white',
-            height: 200,
-            borderColor: 'black',
-            paddingBottom: 5,
-            borderWidth: 0.5,
-          }} />
+          <TextInput
+            autoCapitalize="none"
+            placeholder="Id"
+            onChangeText= {(text) => this.setState({id: text})}
+            value={this.state.id}
+            style={styles.input}
+            multiline={true}
+          />
+          <TextInput
+            autoCapitalize="none"
+            placeholder="Location"
+            onChangeText= {(text) => this.setState({location: text})}
+            value={this.state.location}
+            style={styles.input}
+            multiline={true}
+          />
+          <TextInput
+            autoCapitalize="none"
+            placeholder="Caption"
+            onChangeText= {(text) => this.setState({caption: text})}
+            value={this.state.caption}
+            style={styles.input}
+          />
+          <RoundedButton text= 'POST' onPress={this.onAddEvent.bind(this)} disabled={disabled}/>
         </ScrollView>
         <View style={{
           height: 50,
@@ -70,3 +109,5 @@ export default class AddScreen extends Component {
     )
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps) (AddScreen)

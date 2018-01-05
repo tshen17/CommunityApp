@@ -50,7 +50,7 @@ const style = {
   description: {
     fontFamily: type.base,
     fontSize: size.medium
-  }
+  },
 }
 
 export default {

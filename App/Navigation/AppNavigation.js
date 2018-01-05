@@ -1,3 +1,5 @@
+import { withMappedNavigationProps } from 'react-navigation-props-mapper'
+
 import { StackNavigator } from 'react-navigation'
 import LaunchScreen from '../Containers/LaunchScreen'
 import RegisterScreen from '../Containers/RegisterScreen'
@@ -7,6 +9,7 @@ import ExploreScreen from '../Containers/ExploreScreen'
 import AddScreen from '../Containers/AddScreen'
 import NotificationsScreen from '../Containers/NotificationsScreen'
 import ProfileScreen from '../Containers/ProfileScreen'
+import Comments from '../Components/Comments'
 
 import styles from './Styles/NavigationStyles'
 
@@ -20,6 +23,7 @@ const PrimaryNav = StackNavigator({
   AddScreen: {screen: AddScreen },
   NotificationsScreen: {screen: NotificationsScreen },
   ProfileScreen: {screen: ProfileScreen },
+  Comments: {screen: withMappedNavigationProps(Comments) },
   }, {
     // Default config for all screens
     headerMode: 'none',

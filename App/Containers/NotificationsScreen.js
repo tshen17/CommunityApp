@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { ScrollView, Text, Image, View, TouchableOpacity } from 'react-native'
 import RoundedButton from '../Components/RoundedButton.js'
 
-import InputField from '../Components/InputField.js'
 import { Images } from '../Themes'
 import Icon from 'react-native-vector-icons/FontAwesome';
 

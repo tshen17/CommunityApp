@@ -2,11 +2,13 @@ import { combineReducers } from 'redux'
 import configureStore from './CreateStore'
 import rootSaga from '../Sagas/'
 
-/* ------------- Assemble The Reducers ------------- */
+// Assemble the reducers
 export const reducers = combineReducers({
   nav: require('./NavigationRedux').reducer,
   github: require('./GithubRedux').reducer,
-  search: require('./SearchRedux').reducer
+  search: require('./SearchRedux').reducer,
+  auth: require('./auth/authReducer').default,
+  event: require('./event/eventReducer').default,
 })
 
 export default () => {
